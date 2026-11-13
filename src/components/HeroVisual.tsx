@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { EzerTrustReportCard } from './EzerTrustReportCard';
+import { ShieldCheck, Award, Zap } from 'lucide-react';
 
 export const HeroVisual: React.FC = () => {
   return (
@@ -58,87 +60,54 @@ export const HeroVisual: React.FC = () => {
         </svg>
       </div>
 
-      {/* Main Hardware Display Stage (Pedestal + Laptop + iPhone) */}
-      <div className="relative w-full aspect-[16/11] max-w-[540px]">
-        {/* Dark stage pedestal shadow */}
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-4/5 h-10 bg-black/90 blur-xl rounded-full" />
-        <div className="absolute bottom-0 right-0 w-3/4 h-6 bg-[#161513] rounded-t-lg border-t border-[#2A2824] shadow-2xl" />
+      {/* Main Real Photo Showcase Stage */}
+      <div className="relative w-full max-w-[540px]">
+        {/* Ambient Glow behind image frame */}
+        <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#F5C45E]/30 via-transparent to-[#3B82F6]/25 rounded-[32px] blur-xl opacity-75 pointer-events-none" />
 
-        {/* Laptop Mockup (Open MacBook displaying gold abstract wallpaper) */}
-        <div className="absolute bottom-4 left-6 sm:left-10 w-[72%] sm:w-[70%] aspect-[16/10] z-10 transition-transform duration-500 hover:scale-[1.01]">
-          {/* Laptop Screen Body */}
-          <div className="w-full h-full bg-[#181818] rounded-t-xl sm:rounded-t-2xl p-[5px] sm:p-[7px] border border-[#3E3C38] shadow-[0_20px_50px_rgba(0,0,0,0.9)] flex flex-col">
-            {/* Screen Inner */}
-            <div className="relative w-full flex-1 rounded-t-lg sm:rounded-t-xl overflow-hidden bg-gradient-to-br from-[#0C0C0B] via-[#1A1814] to-[#0A0A09]">
-              {/* Webcam notch / dot */}
-              <div className="absolute top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-black/80 flex items-center justify-center z-20">
-                <div className="w-0.5 h-0.5 rounded-full bg-blue-500/60" />
+        {/* Real Product Picture Showcase Card */}
+        <div className="relative rounded-[28px] overflow-hidden border border-[#F5C45E]/30 bg-[#141311] shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(245,196,94,0.18)] group transition-all duration-500 hover:border-[#F5C45E]/60">
+          {/* Main Real Picture */}
+          <div className="relative w-full aspect-[16/11] overflow-hidden bg-[#0A0A09]">
+            <Image
+              src="/hero-real-gadgets.jpg"
+              alt="Real inspection verified pre-owned laptop and smartphone"
+              fill
+              priority
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-[0.95] contrast-[1.05]"
+            />
+
+            {/* Subtle luxury vignette & gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0A09] via-transparent to-black/30 pointer-events-none" />
+
+            {/* Top Badges overlay on picture */}
+            <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#F5C45E]/40 text-[#F5C45E] text-[11px] font-bold shadow-lg">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#F5C45E]" />
+                <span>35-Point Hardware Verified</span>
               </div>
 
-              {/* Golden Wave Wallpaper on Screen */}
-              <div className="w-full h-full relative overflow-hidden">
-                <svg viewBox="0 0 320 200" fill="none" className="w-full h-full object-cover">
-                  <rect width="320" height="200" fill="#0E0D0B" />
-                  <path
-                    d="M-20 200C60 140 120 70 240 40C290 27 310 10 340 -10"
-                    stroke="url(#screenGold)"
-                    strokeWidth="32"
-                    strokeLinecap="round"
-                    className="opacity-90"
-                  />
-                  <path
-                    d="M10 200C90 150 160 90 280 50"
-                    stroke="#F5C45E"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    className="opacity-80"
-                  />
-                  <defs>
-                    <linearGradient id="screenGold" x1="0" y1="200" x2="300" y2="30" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#1A1814" />
-                      <stop offset="50%" stopColor="#F5C45E" />
-                      <stop offset="100%" stopColor="#D99C32" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                {/* Subtle screen reflection */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none" />
+              <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#35A66A]/25 backdrop-blur-md border border-[#35A66A]/50 text-[#4ADE80] text-[10px] font-bold shadow-md">
+                <Zap className="w-3 h-3 text-[#4ADE80]" />
+                <span>OEM Certified</span>
               </div>
             </div>
 
-            {/* Laptop Base / Keyboard Hinge */}
-            <div className="h-2 sm:h-3 w-full bg-gradient-to-b from-[#2E2C29] to-[#1C1B19] rounded-b-md border-t border-[#3D3A34] relative">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-1 bg-[#141311] rounded-b-sm" />
+            {/* Bottom In-Image Info Strip */}
+            <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] text-[#E5E2DC] pointer-events-none">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#4ADE80] animate-ping" />
+                <span className="font-semibold text-white drop-shadow-sm">Physical Inspection Live</span>
+              </div>
+              <span className="text-[10px] text-[#B8B5B0] bg-black/50 px-2 py-0.5 rounded-md backdrop-blur-sm">
+                Authentic Pre-Owned
+              </span>
             </div>
           </div>
         </div>
 
-        {/* iPhone Pro Mockup (Natural Titanium back showing Triple Camera array) */}
-        <div className="absolute bottom-6 right-8 sm:right-12 w-[22%] sm:w-[24%] aspect-[9/18] z-20 transition-transform duration-500 hover:scale-[1.02]">
-          <div className="w-full h-full bg-gradient-to-b from-[#383632] via-[#2A2926] to-[#1E1D1B] rounded-[22px] sm:rounded-[28px] p-[2.5px] border border-[#524E48] shadow-[0_25px_50px_rgba(0,0,0,0.9),0_0_20px_rgba(0,0,0,0.6)] relative overflow-hidden flex flex-col justify-between">
-            {/* Camera bump square */}
-            <div className="m-2 sm:m-2.5 p-1.5 sm:p-2 rounded-xl sm:rounded-2xl bg-[#2C2A26] border border-[#44413C] shadow-inner grid grid-cols-2 gap-1 sm:gap-1.5 w-14 sm:w-16 h-14 sm:h-16">
-              {/* Lens 1 */}
-              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#121110] border border-[#5A564F] flex items-center justify-center shadow-md">
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#080808] border border-blue-900/50" />
-              </div>
-              {/* Lens 2 */}
-              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#121110] border border-[#5A564F] flex items-center justify-center shadow-md">
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#080808] border border-blue-900/50" />
-              </div>
-              {/* Lens 3 */}
-              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#121110] border border-[#5A564F] flex items-center justify-center shadow-md col-span-2 mx-auto -mt-1 sm:-mt-1.5">
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#080808] border border-blue-900/50" />
-              </div>
-            </div>
-
-            {/* Apple / Ezer Brand Center Mark */}
-            <div className="mx-auto mb-10 w-3 h-3 rounded-full bg-white/10" />
-          </div>
-        </div>
-
-        {/* Floating Glowing "Ezer Trust Report" holographic badge */}
-        <div className="absolute -bottom-4 right-0 sm:-right-4 z-30 w-[88%] sm:w-[78%]">
+        {/* Floating Glowing Ezer Trust Report Card overlapping bottom */}
+        <div className="relative -mt-10 sm:-mt-12 ml-auto z-30 w-[92%] sm:w-[82%] shadow-[0_20px_50px_rgba(0,0,0,0.95)]">
           <EzerTrustReportCard />
         </div>
       </div>

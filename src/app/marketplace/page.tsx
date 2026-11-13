@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useEffect, Suspense } from 'react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import {
   Search,
@@ -210,7 +211,7 @@ function MarketplaceContent() {
                 key={product.id}
                 className="shrink-0 w-[285px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] hover:border-[#F5C45E]/40 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-[0_15px_35px_rgba(0,0,0,0.85)] hover:shadow-[0_20px_45px_rgba(245,196,94,0.15)]"
               >
-                <div>
+                <Link href={`/product/${product.id}`} className="block">
                   {/* Image container */}
                   <div className="relative h-52 w-full bg-[#100F0D] overflow-hidden">
                     <img
@@ -260,18 +261,17 @@ function MarketplaceContent() {
                       <span className="text-[#F5C45E] font-medium">Standard Check: ₹499</span>
                     </div>
                   </div>
-                </div>
+                </Link>
 
                 {/* Bottom CTA */}
                 <div className="p-5 pt-0">
-                  <button
-                    type="button"
-                    onClick={() => handleRequestInspection(product)}
+                  <Link
+                    href={`/product/${product.id}`}
                     className="w-full py-3 rounded-xl text-xs font-bold bg-gradient-to-r from-[#F5C45E] via-[#E8B44A] to-[#D99C32] text-[#0B0A09] shadow-[0_0_15px_rgba(245,196,94,0.25)] hover:shadow-[0_0_25px_rgba(245,196,94,0.45)] transition-all flex items-center justify-center gap-2 hover:scale-[1.01]"
                   >
                     <ShieldCheck className="w-4 h-4" />
-                    <span>Request Physical Inspection</span>
-                  </button>
+                    <span>View Details & Inspect</span>
+                  </Link>
                 </div>
               </div>
             ))}

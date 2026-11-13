@@ -35,6 +35,7 @@ import { CATEGORIES, SUPPORTED_PLATFORMS, MOCK_MARKETPLACE_PRODUCTS } from '@/li
 import { createInspectionRequest, isValidListingUrl } from '@/lib/store';
 import { SubmitListingModal } from '@/components/SubmitListingModal';
 import { HeroVisual } from '@/components/HeroVisual';
+import { AutoScrollBanner } from '@/components/AutoScrollBanner';
 import confetti from 'canvas-confetti';
 
 export default function HomePage() {
@@ -239,31 +240,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* 3. Mobile Verified Trust Banner (Matching blue shield banner from screenshot in Ezer palette) */}
-        <div className="rounded-2xl bg-gradient-to-r from-[#171B26] via-[#141822] to-[#121316] border border-[#3B82F6]/30 p-3.5 flex items-center justify-between gap-3 shadow-[0_10px_25px_rgba(0,0,0,0.8)]">
-          <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0 text-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.25)]">
-              <ShieldCheck className="w-5 h-5 text-blue-400" />
-            </div>
-            <div>
-              <h3 className="text-xs font-bold text-white leading-snug">
-                You are eligible for Verified
-              </h3>
-              <p className="text-[10px] text-[#9E9B95] leading-tight">
-                Gain instant trust of users & inspect before paying
-              </p>
-            </div>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              window.dispatchEvent(new CustomEvent('open-verify-modal'));
-            }}
-            className="px-3 py-1.5 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold text-xs shrink-0 shadow-[0_0_12px_rgba(59,130,246,0.4)] active:scale-95 transition-all"
-          >
-            Get Verified
-          </button>
-        </div>
+        {/* 3. Mobile Automatically Scrolling Banners with Bubble Indicators */}
+        <AutoScrollBanner className="my-1" />
 
         {/* 4. Quick URL Input Card for Direct Verification */}
         <div className="rounded-2xl bg-[#141311] border border-[#26241F] p-3.5 space-y-2.5 shadow-md link-input-card">
@@ -359,29 +337,22 @@ export default function HomePage() {
             {MOCK_MARKETPLACE_PRODUCTS.map((prod) => (
               <div
                 key={prod.id}
-                className="rounded-2xl bg-[#141311] border border-[#26241F] overflow-hidden flex flex-col justify-between shadow-sm hover:border-[#F5C45E]/40 transition-all"
+                className="rounded-2xl bg-[#141311] border border-[#26241F] overflow-hidden flex flex-col justify-between shadow-sm hover:border-[#F5C45E]/40 transition-all group"
               >
-                <div>
+                <Link href={`/product/${prod.id}`} className="block">
                   <div className="relative h-28 w-full bg-[#1A1815] overflow-hidden">
                     <img
                       src={prod.image}
                       alt={prod.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <button
-                      type="button"
-                      aria-label="Save product"
-                      className="absolute top-2 right-2 p-1 rounded-full bg-[#0B0A09]/70 text-white hover:text-red-400 transition-colors"
-                    >
-                      <Heart className="w-3.5 h-3.5" />
-                    </button>
                   </div>
 
                   <div className="p-2.5 space-y-1">
                     <div className="text-base font-extrabold text-[#F5C45E]">
                       ₹{prod.price.toLocaleString('en-IN')}
                     </div>
-                    <h4 className="text-xs font-semibold text-white line-clamp-1 leading-snug">
+                    <h4 className="text-xs font-semibold text-white line-clamp-1 leading-snug group-hover:text-[#F5C45E] transition-colors">
                       {prod.title}
                     </h4>
                     <div className="flex items-center justify-between text-[10px] text-[#8E8B85] pt-0.5">
@@ -389,20 +360,16 @@ export default function HomePage() {
                       <span>{prod.posted_time}</span>
                     </div>
                   </div>
-                </div>
+                </Link>
 
                 <div className="p-2.5 pt-0">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setListingUrl(prod.url);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
+                  <Link
+                    href={`/product/${prod.id}`}
                     className="w-full py-1.5 rounded-lg text-[10px] font-bold bg-[#1C1A17] hover:bg-[#F5C45E] text-[#F5C45E] hover:text-[#0B0A09] border border-[#353127] transition-colors flex items-center justify-center gap-1"
                   >
                     <ShieldCheck className="w-3 h-3" />
-                    <span>Verify</span>
-                  </button>
+                    <span>View & Inspect</span>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -425,12 +392,6 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               {/* LEFT COLUMN: HERO HEADLINE, BULLETS & SUBMISSION CARD */}
               <div className="lg:col-span-7 space-y-7">
-                {/* Luxury Badge: India's Second-Hand Trust Platform */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#F5C45E]/35 bg-[#171613]/85 text-[#D8D5CF] text-xs font-medium shadow-[0_0_15px_rgba(245,196,94,0.12)]">
-                  <ShieldCheck className="w-4 h-4 text-[#F5C45E]" />
-                  <span className="tracking-wide">India's Second-Hand Trust Platform</span>
-                </div>
-
                 {/* Luxury Headline */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08] font-sans">
                   Know Before <br />
@@ -634,43 +595,10 @@ export default function HomePage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* DESKTOP VERIFIED PROTECTION GUARANTEE BANNER                              */}
+        {/* DESKTOP AUTOMATICALLY SCROLLING BANNERS WITH BUBBLE INDICATORS            */}
         {/* ========================================================================= */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-8 relative z-20">
-          <div className="rounded-3xl bg-gradient-to-r from-[#171B26] via-[#14161F] to-[#121316] border border-[#3B82F6]/35 p-6 sm:p-7 flex items-center justify-between gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.85)]">
-            <div className="flex items-center gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-blue-500/15 border border-blue-500/35 flex items-center justify-center shrink-0 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
-                <ShieldCheck className="w-7 h-7 text-blue-400" />
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-wider border border-blue-500/30">
-                    Official Buyer Protection
-                  </span>
-                  <span className="text-xs text-[#8E8B85]">Coverage across 15 Indian metro regions</span>
-                </div>
-                <h3 className="text-lg font-bold text-white tracking-tight">
-                  You are eligible for Verified Pre-Owned Inspection Guarantee
-                </h3>
-                <p className="text-xs text-[#B8B5B0] max-w-2xl leading-relaxed">
-                  Avoid paying upfront for swapped OEM screens, fake invoices, and hidden chassis damages. An Ezer certified technician conducts an exhaustive 35-point on-site diagnostic before you commit.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 shrink-0">
-              <button
-                type="button"
-                onClick={() => {
-                  const el = document.getElementById('verify-form');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="px-5 py-3 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold text-xs shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Inspect a Listing Now
-              </button>
-            </div>
-          </div>
+          <AutoScrollBanner />
         </section>
 
         {/* 4 FEATURE HIGHLIGHTS */}
@@ -843,20 +771,13 @@ export default function HomePage() {
                   key={product.id}
                   className="bg-[#141311] border border-[#26241F] hover:border-[#F5C45E]/40 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-[0_15px_35px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_45px_rgba(245,196,94,0.12)] hover:-translate-y-1"
                 >
-                  <div>
+                  <Link href={`/product/${product.id}`} className="block">
                     <div className="relative h-48 w-full bg-[#100F0D] overflow-hidden">
                       <img
                         src={product.image}
                         alt={product.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <button
-                        type="button"
-                        aria-label="Save listing to wishlist"
-                        className="absolute top-3 right-3 p-2 rounded-full bg-[#0B0A09]/80 backdrop-blur-md text-white hover:text-red-400 hover:scale-110 transition-all border border-[#2B2822] shadow-sm"
-                      >
-                        <Heart className="w-4 h-4" />
-                      </button>
                     </div>
 
                     <div className="p-5 space-y-2.5">
@@ -886,21 +807,16 @@ export default function HomePage() {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
 
                   <div className="p-5 pt-0">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setListingUrl(product.url);
-                        const el = document.getElementById('verify-form');
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      }}
+                    <Link
+                      href={`/product/${product.id}`}
                       className="w-full py-3 rounded-2xl text-xs font-bold bg-gradient-to-r from-[#1C1A17] to-[#25221C] hover:from-[#F5C45E] hover:to-[#D99C32] text-[#F5C45E] hover:text-[#0B0A09] border border-[#3A352B] hover:border-[#F5C45E] transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow-[0_0_20px_rgba(245,196,94,0.3)]"
                     >
                       <ShieldCheck className="w-4 h-4" />
-                      <span>Request Physical Inspection</span>
-                    </button>
+                      <span>View Details & Inspect</span>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -934,7 +850,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/inspector"
-                  className="px-7 py-3.5 rounded-xl text-xs sm:text-sm font-bold bg-[#1A1815] border border-[#2E2B25] text-white hover:border-[#F5C45E]/50 transition-all flex items-center gap-2"
+                  className="secondary-luxury-btn px-7 py-3.5 rounded-xl text-xs sm:text-sm font-bold bg-[#1A1815] border border-[#2E2B25] text-white hover:border-[#F5C45E]/50 transition-all flex items-center gap-2 shadow-sm"
                 >
                   <span>View Inspector Portal Demo</span>
                 </Link>

@@ -3,137 +3,118 @@
 import React from 'react';
 import Link from 'next/link';
 import { EzerLogo } from './EzerLogo';
-import { ShieldCheck, MapPin, ExternalLink, Heart, Sparkles } from 'lucide-react';
+import { ArrowUp, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const navLinks = [
+    { label: 'Analyze Listing', href: '/#verify-form' },
+    { label: 'Marketplace', href: '/marketplace' },
+    { label: 'How It Works', href: '/how-it-works' },
+    { label: 'Inspector Guild', href: '/join-partner' },
+    { label: 'My Requests', href: '/dashboard' },
+    { label: 'About', href: '/about' },
+  ];
+
+  const districts = [
+    'Bengaluru',
+    'Mumbai',
+    'Delhi NCR',
+    'Kochi',
+    'Hyderabad',
+    'Pune',
+    'Chennai',
+    'Kolkata',
+  ];
+
   return (
-    <footer className="bg-[#080706] border-t border-[#1F1D19] pt-16 pb-24 sm:pb-14 text-[#9E9B95] text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-14">
-          {/* Brand info */}
-          <div className="md:col-span-1 space-y-4">
-            <EzerLogo size="md" showTagline={true} />
-            <p className="text-xs text-[#8E8B85] leading-relaxed">
-              India's premier physical verification platform for second-hand products. We dispatch verified expert technicians to inspect OLX, Facebook & Quikr listings before payment.
+    <footer className="relative bg-[#080706] border-t border-[#1C1A17] pt-14 pb-24 lg:pb-12 text-[#8E8B85] overflow-hidden select-none transition-colors">
+      {/* Giant Minimalist Creative Watermark Typography in Background */}
+      <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 pointer-events-none select-none text-[15vw] font-black tracking-tighter text-white/[0.025] leading-none whitespace-nowrap font-sans">
+        EZER TRUST
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
+        {/* Top Architectural Row: Brand + Live Network Status + Back to Top */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#1A1815]">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            <EzerLogo size="md" showTagline={false} />
+            <span className="hidden sm:inline-block w-[1px] h-5 bg-[#26241F]" />
+            <p className="text-xs text-[#8E8B85] max-w-sm leading-relaxed">
+              India’s independent on-site product inspection platform. Know before you buy.
             </p>
-            <div className="flex items-center gap-2 text-xs text-[#F5C45E] font-medium">
-              <ShieldCheck className="w-4 h-4 text-[#F5C45E]" />
-              <span>100% Impartial Physical Verification</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            {/* Live Operational Status Pill */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#141311] border border-[#26241F] text-[11px] text-[#A19D95] shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#35A66A] animate-pulse" />
+              <span>Inspection Network Active</span>
+            </div>
+
+            {/* Back to Top Minimalist Pill */}
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="p-2 sm:px-3 sm:py-1.5 rounded-full bg-[#141311] hover:bg-[#1C1A17] border border-[#26241F] hover:border-[#F5C45E]/40 text-xs text-[#8E8B85] hover:text-[#F5C45E] transition-all flex items-center gap-1.5 shadow-sm group cursor-pointer"
+              aria-label="Scroll back to top"
+            >
+              <span className="hidden sm:inline text-[11px] font-medium">Top</span>
+              <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </div>
+        </div>
+
+        {/* Center Minimal Grid: Navigation Index & Active Districts */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          {/* Platform Navigation Minimal Index */}
+          <div className="md:col-span-6 space-y-3">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5C45E]">
+              Directory Index
+            </span>
+            <div className="flex flex-wrap gap-x-6 gap-y-2.5 text-xs">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-[#9E9B95] hover:text-[#F5C45E] transition-colors font-medium py-0.5"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Quick links */}
-          <div>
-            <h4 className="text-white font-semibold text-xs uppercase tracking-widest mb-4 flex items-center gap-1.5">
-              <Sparkles className="w-3 h-3 text-[#F5C45E]" />
-              Platform
-            </h4>
-            <ul className="space-y-2.5 text-xs">
-              <li>
-                <Link href="/" className="hover:text-[#F5C45E] transition-colors">
-                  Home & URL Analyzer
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-it-works" className="hover:text-[#F5C45E] transition-colors">
-                  How Verification Works
-                </Link>
-              </li>
-              <li>
-                <Link href="/marketplace" className="hover:text-[#F5C45E] transition-colors">
-                  Browse Demo Categories
-                </Link>
-              </li>
-              <li>
-                <Link href="/dashboard" className="hover:text-[#F5C45E] transition-colors">
-                  Customer Dashboard
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-[#F5C45E] transition-colors">
-                  About Ezer's Mission
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* For Inspectors */}
-          <div>
-            <h4 className="text-white font-semibold text-xs uppercase tracking-widest mb-4 flex items-center gap-1.5">
-              <Sparkles className="w-3 h-3 text-[#F5C45E]" />
-              For Inspectors
-            </h4>
-            <ul className="space-y-2.5 text-xs">
-              <li>
-                <Link
-                  href="/join-partner"
-                  className="text-[#F5C45E] font-medium hover:underline inline-flex items-center gap-1"
-                >
-                  Become an Ezer Partner
-                  <ExternalLink className="w-3 h-3" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/inspector" className="hover:text-[#F5C45E] transition-colors">
-                  Inspector Portal & Jobs
-                </Link>
-              </li>
-              <li>
-                <Link href="/inspector?tab=earnings" className="hover:text-[#F5C45E] transition-colors">
-                  Inspection Payouts & Rates
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-it-works#inspection-protocol" className="hover:text-[#F5C45E] transition-colors">
-                  Inspection Protocols & Standards
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Coverage cities */}
-          <div>
-            <h4 className="text-white font-semibold text-xs uppercase tracking-widest mb-4 flex items-center gap-1.5">
-              <Sparkles className="w-3 h-3 text-[#F5C45E]" />
-              Active Coverage
-            </h4>
-            <div className="flex flex-wrap gap-2 text-xs">
-              {[
-                'Bengaluru',
-                'Mumbai',
-                'Delhi NCR',
-                'Hyderabad',
-                'Pune',
-                'Chennai',
-                'Kolkata',
-                'Ahmedabad',
-              ].map((city) => (
+          {/* Active Coverage Minimal Ticker */}
+          <div className="md:col-span-6 space-y-3">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#8E8B85]">
+              Active On-Site Districts
+            </span>
+            <div className="flex flex-wrap gap-1.5 text-xs">
+              {districts.map((city) => (
                 <span
                   key={city}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-[#141311] border border-[#23211D] text-[#8E8B85] hover:border-[#F5C45E]/40 hover:text-white transition-all text-xs"
+                  className="px-2.5 py-1 rounded-lg bg-[#12110F] border border-[#201E1A] text-[11px] text-[#7D7971] hover:border-[#F5C45E]/30 hover:text-[#A19D95] transition-colors"
                 >
-                  <MapPin className="w-3 h-3 text-[#F5C45E]" />
                   {city}
                 </span>
               ))}
             </div>
-            <p className="text-xs text-[#706E68] mt-3">
-              Expanding across Tier-1 and Tier-2 Indian hubs every month.
-            </p>
           </div>
         </div>
 
-        {/* Legal Disclaimer */}
-        <div className="border-t border-[#1C1A17] pt-7 text-xs text-[#706E68] leading-relaxed">
-          <p className="mb-2">
-            <strong className="text-neutral-400">Disclaimer:</strong> Ezer is an independent third-party physical inspection and product verification service. Ezer is not affiliated with, endorsed by, operated by, or sponsored by OLX Global B.V., Meta Platforms, Inc. (Facebook Marketplace), Quikr India Pvt. Ltd., Truecaller, or any external classifieds platform. Brand names, logos, and trademarks shown remain the property of their respective owners and are referenced solely for identification of external listing URLs.
+        {/* Bottom Minimal Copyright & Neutral Legal Line */}
+        <div className="pt-8 border-t border-[#171512] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#636059]">
+          <p>© {new Date().getFullYear()} Ezer Technologies Pvt. Ltd. All rights reserved.</p>
+
+          <p className="max-w-md text-center sm:text-right leading-tight">
+            Independent physical inspection service. Not affiliated with external classifieds.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 pt-5 border-t border-[#141311]">
-            <p>© {new Date().getFullYear()} Ezer Technologies Pvt. Ltd. All rights reserved.</p>
-            <p className="flex items-center gap-1.5 text-xs text-[#8E8B85]">
-              Engineered with <Heart className="w-3.5 h-3.5 text-[#F5C45E] fill-[#F5C45E]" /> for Indian second-hand buyers.
-            </p>
-          </div>
         </div>
       </div>
     </footer>

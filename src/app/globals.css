@@ -365,6 +365,27 @@ html.light .bg-\[\#F5C45E\] * {
   color: #0B0A09 !important;
 }
 
+/* Secondary Luxury Outline Button in Light Mode (e.g. View Inspector Portal Demo) */
+html.light .secondary-luxury-btn,
+html.light a.secondary-luxury-btn,
+html.light a[href="/inspector"].secondary-luxury-btn {
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  border-color: #D6D0C4 !important;
+  color: #151412 !important;
+  box-shadow: 0 4px 15px rgba(22, 20, 18, 0.05) !important;
+}
+
+html.light .secondary-luxury-btn *,
+html.light a.secondary-luxury-btn * {
+  color: #151412 !important;
+}
+
+html.light .secondary-luxury-btn:hover {
+  background-color: #F4EFE6 !important;
+  border-color: #C89124 !important;
+}
+
 /* ========================================================================= */
 /* DESKTOP CARDS & GRADIENT OVERRIDES IN LIGHT MODE                          */
 /* ========================================================================= */
@@ -437,3 +458,290 @@ html.light .luxury-card-elevated {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06) !important;
 }
 
+
+/* ========================================================================= */
+/* AUTO-SCROLL BANNER STYLES - DUAL THEME (DARK & LIGHT)                     */
+/* ========================================================================= */
+
+/* Dark Mode Defaults */
+.banner-card {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85);
+}
+
+.banner-card.banner-theme-blue {
+  background: linear-gradient(135deg, #141824 0%, #10141D 50%, #0D1017 100%);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+.banner-card.banner-theme-gold {
+  background: linear-gradient(135deg, #241D12 0%, #1A150D 50%, #120F09 100%);
+  border: 1px solid rgba(245, 196, 94, 0.35);
+}
+.banner-card.banner-theme-emerald {
+  background: linear-gradient(135deg, #12211A 0%, #0E1A14 50%, #0B130F 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.banner-theme-blue .banner-badge {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #60A5FA;
+}
+.banner-theme-gold .banner-badge {
+  background: rgba(245, 196, 94, 0.15);
+  border: 1px solid rgba(245, 196, 94, 0.35);
+  color: #F5C45E;
+}
+.banner-theme-emerald .banner-badge {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34D399;
+}
+
+.banner-subtag {
+  color: #8E8B85;
+}
+
+.banner-heading {
+  color: #FFFFFF;
+}
+
+.banner-theme-blue .banner-highlight {
+  color: #93C5FD;
+}
+.banner-theme-gold .banner-highlight {
+  color: #FDE047;
+}
+.banner-theme-emerald .banner-highlight {
+  color: #6EE7B7;
+}
+
+.banner-subtitle {
+  color: #A3A099;
+}
+
+.banner-theme-blue .banner-check-icon {
+  color: #60A5FA;
+}
+.banner-theme-gold .banner-check-icon {
+  color: #F5C45E;
+}
+.banner-theme-emerald .banner-check-icon {
+  color: #34D399;
+}
+
+.banner-check-text {
+  color: #D6D2CA;
+}
+
+.banner-theme-blue .banner-cta-btn {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.45);
+}
+.banner-theme-gold .banner-cta-btn {
+  background: linear-gradient(135deg, #F5C45E 0%, #D99C32 100%);
+  color: #0B0A09 !important;
+  box-shadow: 0 4px 20px rgba(245, 196, 94, 0.45);
+}
+.banner-theme-gold .banner-cta-btn * {
+  color: #0B0A09 !important;
+}
+.banner-theme-emerald .banner-cta-btn {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+}
+
+.banner-stat {
+  border-color: #2D2A24;
+}
+.banner-stat-num {
+  color: #FFFFFF;
+}
+.banner-stat-label {
+  color: #8E8B85;
+}
+
+.banner-photo-wrapper {
+  border: 1px solid #3A362E;
+}
+.banner-photo-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 60%);
+}
+.banner-photo-tag {
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+.banner-photo-bottom-tag {
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #A3A099;
+}
+
+.banner-nav-btn {
+  background: #181613;
+  border: 1px solid #2D2A24;
+  color: #8E8B85;
+}
+.banner-nav-btn:hover {
+  background: #25221C;
+  color: #FFFFFF;
+}
+
+.banner-indicator-active {
+  width: 28px;
+  height: 8px;
+  background: #F5C45E;
+  box-shadow: 0 0 12px rgba(245, 196, 94, 0.6);
+}
+.banner-indicator-inactive {
+  width: 8px;
+  height: 8px;
+  background: #33302A;
+}
+.banner-indicator-inactive:hover {
+  background: #524E45;
+}
+
+/* ========================================================================= */
+/* LIGHT MODE BANNER OVERRIDES - CRISP, HIGH CONTRAST & LUXURY WHITE/CREAM   */
+/* ========================================================================= */
+
+html.light .banner-card {
+  box-shadow: 0 15px 35px rgba(20, 18, 15, 0.08) !important;
+}
+
+html.light .banner-card.banner-theme-blue {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0F6FF 60%, #E5F0FF 100%) !important;
+  border: 1.5px solid #BFDBFE !important;
+}
+html.light .banner-card.banner-theme-gold {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF5 60%, #FEF9E6 100%) !important;
+  border: 1.5px solid #FDE68A !important;
+}
+html.light .banner-card.banner-theme-emerald {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF4 60%, #DCFCE7 100%) !important;
+  border: 1.5px solid #BBF7D0 !important;
+}
+
+html.light .banner-theme-blue .banner-badge {
+  background: #EFF6FF !important;
+  border: 1px solid #93C5FD !important;
+  color: #1D4ED8 !important;
+}
+html.light .banner-theme-gold .banner-badge {
+  background: #FEFCE8 !important;
+  border: 1px solid #FCD34D !important;
+  color: #92400E !important;
+}
+html.light .banner-theme-emerald .banner-badge {
+  background: #F0FDF4 !important;
+  border: 1px solid #86EFAC !important;
+  color: #047857 !important;
+}
+
+html.light .banner-subtag {
+  color: #64748B !important;
+}
+
+html.light .banner-heading {
+  color: #0F172A !important;
+}
+
+html.light .banner-theme-blue .banner-highlight {
+  color: #2563EB !important;
+}
+html.light .banner-theme-gold .banner-highlight {
+  color: #B45309 !important;
+}
+html.light .banner-theme-emerald .banner-highlight {
+  color: #059669 !important;
+}
+
+html.light .banner-subtitle {
+  color: #475569 !important;
+}
+
+html.light .banner-theme-blue .banner-check-icon {
+  color: #2563EB !important;
+}
+html.light .banner-theme-gold .banner-check-icon {
+  color: #D97706 !important;
+}
+html.light .banner-theme-emerald .banner-check-icon {
+  color: #059669 !important;
+}
+
+html.light .banner-check-text {
+  color: #334155 !important;
+}
+
+html.light .banner-theme-blue .banner-cta-btn {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35) !important;
+}
+html.light .banner-theme-blue .banner-cta-btn * {
+  color: #FFFFFF !important;
+}
+html.light .banner-theme-gold .banner-cta-btn {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 18px rgba(217, 119, 6, 0.35) !important;
+}
+html.light .banner-theme-gold .banner-cta-btn * {
+  color: #FFFFFF !important;
+}
+html.light .banner-theme-emerald .banner-cta-btn {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 18px rgba(5, 150, 105, 0.35) !important;
+}
+html.light .banner-theme-emerald .banner-cta-btn * {
+  color: #FFFFFF !important;
+}
+
+html.light .banner-stat {
+  border-color: #E2E8F0 !important;
+}
+html.light .banner-stat-num {
+  color: #0F172A !important;
+}
+html.light .banner-stat-label {
+  color: #64748B !important;
+}
+
+html.light .banner-photo-wrapper {
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+}
+html.light .banner-photo-tag {
+  background: rgba(15, 23, 42, 0.75) !important;
+  color: #FFFFFF !important;
+}
+html.light .banner-photo-bottom-tag {
+  background: rgba(15, 23, 42, 0.7) !important;
+  color: #E2E8F0 !important;
+}
+
+html.light .banner-nav-btn {
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #475569 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+html.light .banner-nav-btn:hover {
+  background: #F8FAFC !important;
+  color: #0F172A !important;
+  border-color: #94A3B8 !important;
+}
+
+html.light .banner-indicator-active {
+  background: #D97706 !important;
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.5) !important;
+}
+html.light .banner-indicator-inactive {
+  background: #CBD5E1 !important;
+}
+html.light .banner-indicator-inactive:hover {
+  background: #94A3B8 !important;
+}
