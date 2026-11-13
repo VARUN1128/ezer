@@ -365,6 +365,61 @@ html.light .bg-\[\#F5C45E\] * {
   color: #0B0A09 !important;
 }
 
+/* ========================================================================= */
+/* DESKTOP CARDS & GRADIENT OVERRIDES IN LIGHT MODE                          */
+/* ========================================================================= */
+
+/* Clear dark gradients on all cards, feature boxes, and CTA cards */
+html.light [class*="from-[#161513]"],
+html.light [class*="from-[#1C1A15]"],
+html.light [class*="from-[#1C1A17]"]:not([class*="from-[#F5C45E]"]),
+html.light [class*="from-[#0C0C0B]"] {
+  background-image: none !important;
+  background-color: #FFFFFF !important;
+  border-color: #E2DDD3 !important;
+  box-shadow: 0 10px 30px rgba(22, 20, 18, 0.06) !important;
+}
+
+/* Clear dark gradient on secondary buttons in cards */
+html.light [class*="to-[#25221C]"] {
+  background-image: none !important;
+  background-color: #F1EDE5 !important;
+  border-color: #D8D3C7 !important;
+  color: #9A6700 !important;
+}
+
+/* Desktop Sections & Containers */
+html.light section[class*="bg-[#0E0D0B]"],
+html.light [class*="bg-[#0E0D0B]"],
+html.light [class*="bg-[#0B0A09]"],
+html.light [class*="bg-[#100F0D]"],
+html.light [class*="bg-[#161513]"] {
+  background-color: #F8F7F4 !important;
+  border-color: #E2DDD3 !important;
+}
+
+/* Desktop Icon Badges & Small Chips */
+html.light [class*="bg-[#1F1C16]"],
+html.light [class*="bg-[#1F1D19]"],
+html.light [class*="bg-[#1C1A16]"],
+html.light [class*="bg-[#25221B]"],
+html.light [class*="bg-[#2E2B25]"],
+html.light [class*="bg-[#332E25]"] {
+  background-color: #F1EDE5 !important;
+  border-color: #D8D3C7 !important;
+}
+
+/* Vertical dividers in Light Mode */
+html.light .h-8.w-\[1px\].bg-\[\#2E2B25\] {
+  background-color: #D8D3C7 !important;
+}
+
+/* Trust Report Floating Card in Hero Visual */
+html.light [class*="border-[#F5C45E]/60"],
+html.light [class*="border-[#F5C45E]/30"] {
+  border-color: #E2DDD3 !important;
+}
+
 /* Shadows & Glass in Light Mode */
 html.light [class*="shadow-"] {
   box-shadow: 0 10px 30px rgba(22, 20, 18, 0.07) !important;
