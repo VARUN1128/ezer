@@ -13,6 +13,7 @@ import {
   Tag,
   CheckCircle,
   SlidersHorizontal,
+  Heart,
 } from 'lucide-react';
 import { CATEGORIES, MOCK_MARKETPLACE_PRODUCTS } from '@/lib/constants';
 import { MockProductListing } from '@/lib/types';
@@ -143,24 +144,28 @@ function MarketplaceContent() {
           <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 scrollbar-none">
             <button
               onClick={() => setSelectedCategory('All')}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-2 ${
                 selectedCategory === 'All'
                   ? 'bg-gradient-to-r from-[#F5C45E] to-[#D99C32] text-[#0B0A09] font-bold shadow-[0_0_15px_rgba(245,196,94,0.3)]'
-                  : 'bg-[#1C1A17] border border-[#26241F] text-[#9E9B95] hover:text-white'
+                  : 'bg-[#1C1A17] border border-[#26241F] text-[#9E9B95] hover:text-white hover:border-[#F5C45E]/30'
               }`}
             >
+              <Sparkles className="w-3.5 h-3.5" />
               All Categories
             </button>
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.name)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-2.5 ${
                   selectedCategory === cat.name
                     ? 'bg-gradient-to-r from-[#F5C45E] to-[#D99C32] text-[#0B0A09] font-bold shadow-[0_0_15px_rgba(245,196,94,0.3)]'
-                    : 'bg-[#1C1A17] border border-[#26241F] text-[#9E9B95] hover:text-white'
+                    : 'bg-[#1C1A17] border border-[#26241F] text-[#9E9B95] hover:text-white hover:border-[#F5C45E]/30'
                 }`}
               >
+                <div className="w-5 h-5 rounded-full overflow-hidden bg-black/40 shrink-0 border border-white/10">
+                  <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+                </div>
                 {cat.name}
               </button>
             ))}
@@ -213,12 +218,6 @@ function MarketplaceContent() {
                       alt={product.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    {/* Marketplace badge */}
-                    <div className="absolute top-3 left-3">
-                      <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#0B0A09]/85 backdrop-blur-md text-[#F5C45E] border border-[#F5C45E]/30 shadow-md">
-                        {product.marketplace}
-                      </span>
-                    </div>
                     {/* Demo badge */}
                     <div className="absolute top-3 right-3">
                       <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-neutral-900/90 text-neutral-300 border border-neutral-700">

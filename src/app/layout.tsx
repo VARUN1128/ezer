@@ -26,6 +26,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function() {
+              try {
+                var theme = localStorage.getItem('ezer-theme');
+                if (theme === 'light') {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.classList.add('light');
+                } else {
+                  document.documentElement.classList.remove('light');
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (e) {}
+            })();`,
+          }}
+        />
+      </head>
       <body className="bg-[#101010] text-white min-h-screen flex flex-col selection:bg-[#F5C45E] selection:text-[#101010]">
         <Navbar />
         <main className="flex-1 pb-20 lg:pb-0">{children}</main>

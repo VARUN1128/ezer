@@ -124,3 +124,261 @@ body {
     padding-bottom: 0;
   }
 }
+
+/* ========================================================================= */
+/* LUXURY LIGHT & DARK THEME OVERRIDES                                       */
+/* ========================================================================= */
+html.light {
+  --background: #F8F7F4;
+  --surface: #FFFFFF;
+  --surface-elevated: #F1ECE3;
+  --text-primary: #151412;
+  --text-muted: #545047;
+  color-scheme: light;
+}
+
+html.light,
+html.light body {
+  background-color: #F8F7F4 !important;
+  color: #151412 !important;
+}
+
+html.light header {
+  background-color: rgba(248, 247, 244, 0.96) !important;
+  border-bottom-color: #E2DDD3 !important;
+}
+
+/* Base Canvas & Container Backgrounds */
+html.light .bg-\[\#0B0A09\],
+html.light [class*="bg-[#0B0A09]"],
+html.light .bg-\[\#101010\],
+html.light [class*="bg-[#101010]"] {
+  background-color: #F8F7F4 !important;
+}
+
+/* Card & Surface Backgrounds */
+html.light .bg-\[\#141311\],
+html.light [class*="bg-[#141311]"],
+html.light .bg-\[\#161411\],
+html.light [class*="bg-[#161411]"],
+html.light .bg-\[\#171512\],
+html.light [class*="bg-[#171512]"],
+html.light .bg-\[\#181613\],
+html.light [class*="bg-[#181613]"],
+html.light .bg-\[\#181714\],
+html.light [class*="bg-[#181714]"],
+html.light .bg-\[\#151412\],
+html.light [class*="bg-[#151412]"],
+html.light .bg-\[\#1C1A17\],
+html.light [class*="bg-[#1C1A17]"],
+html.light .bg-\[\#1C1A16\],
+html.light [class*="bg-[#1C1A16]"],
+html.light .bg-\[\#12110F\],
+html.light [class*="bg-[#12110F]"],
+html.light .bg-\[\#100F0D\],
+html.light [class*="bg-[#100F0D]"],
+html.light .bg-\[\#100F0E\],
+html.light [class*="bg-[#100F0E]"],
+html.light .bg-\[\#0E0D0B\],
+html.light [class*="bg-[#0E0D0B]"],
+html.light .bg-\[\#161513\],
+html.light [class*="bg-[#161513]"],
+html.light .bg-\[\#1F1D19\],
+html.light [class*="bg-[#1F1D19]"] {
+  background-color: #FFFFFF !important;
+  border-color: #E2DDD3 !important;
+}
+
+html.light .bg-\[\#201E1A\],
+html.light [class*="bg-[#201E1A]"],
+html.light .bg-\[\#22201B\],
+html.light [class*="bg-[#22201B]"],
+html.light .bg-\[\#1E1C18\],
+html.light [class*="bg-[#1E1C18]"],
+html.light .bg-\[\#24221D\],
+html.light [class*="bg-[#24221D]"],
+html.light .bg-\[\#25231F\],
+html.light [class*="bg-[#25231F]"],
+html.light .bg-\[\#1F1C16\],
+html.light [class*="bg-[#1F1C16]"] {
+  background-color: #F1EDE5 !important;
+  border-color: #E2DDD3 !important;
+}
+
+/* Mobile Bottom Navigation */
+html.light nav.fixed.bottom-0 {
+  background-color: #FFFFFF !important;
+  border-top-color: #E2DDD3 !important;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Border overrides */
+html.light [class*="border-[#2"],
+html.light [class*="border-[#3"] {
+  border-color: #E2DDD3 !important;
+}
+
+/* ========================================================================= */
+/* ALL TYPOGRAPHY IN LIGHT MODE - ROCK SOLID VISIBILITY                      */
+/* ========================================================================= */
+
+/* 1. All text-white becomes crisp dark charcoal */
+html.light .text-white,
+html.light [class*="text-white"] {
+  color: #151412 !important;
+}
+
+/* 2. Headings & Titles */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #151412 !important;
+}
+
+/* 3. Muted text & Gray text */
+html.light .text-\[\#E0DDD8\],
+html.light [class*="text-[#E0DDD8]"],
+html.light .text-\[\#E5E2DC\],
+html.light [class*="text-[#E5E2DC]"],
+html.light .text-\[\#D8D5CF\],
+html.light [class*="text-[#D8D5CF]"],
+html.light .text-\[\#C4C0B7\],
+html.light .text-\[\#D4D0C7\] {
+  color: #262420 !important;
+}
+
+html.light .text-\[\#9E9B95\],
+html.light [class*="text-[#9E9B95]"],
+html.light .text-\[\#8E8B85\],
+html.light [class*="text-[#8E8B85]"],
+html.light .text-\[\#78756F\],
+html.light [class*="text-[#78756F]"],
+html.light .text-\[\#75726B\],
+html.light [class*="text-[#75726B]"],
+html.light .text-\[\#B8B5B0\],
+html.light [class*="text-[#B8B5B0]"],
+html.light .text-neutral-400,
+html.light .text-neutral-500,
+html.light .text-neutral-300,
+html.light .text-gray-400,
+html.light .text-gray-500,
+html.light .text-slate-400,
+html.light .text-slate-500 {
+  color: #545047 !important;
+}
+
+/* 4. Gold Text becomes High-Contrast Rich Bronze Gold */
+html.light .text-\[\#F5C45E\],
+html.light [class*="text-[#F5C45E]"] {
+  color: #9A6700 !important;
+}
+
+html.light .text-\[\#D99C32\],
+html.light [class*="text-[#D99C32]"] {
+  color: #8A5200 !important;
+}
+
+/* 5. Metallic Text Gradients */
+html.light .gold-text-gradient,
+html.light .gold-metallic-text {
+  background: linear-gradient(135deg, #1C1917 0%, #7C4800 45%, #A86D00 80%, #7C4800 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* 6. Inputs and Forms */
+html.light input,
+html.light select,
+html.light textarea {
+  color: #151412 !important;
+  background-color: #FFFFFF !important;
+  border-color: #D6D1C6 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #7D7971 !important;
+}
+
+/* Link Pasting Card & Input Wrapper in Light Mode */
+html.light .link-input-card,
+html.light #verify-form {
+  background-color: #FFFFFF !important;
+  border-color: #E2DDD3 !important;
+  box-shadow: 0 10px 30px rgba(22, 20, 18, 0.06) !important;
+}
+
+html.light .link-input-wrapper {
+  background-color: #F8F7F4 !important;
+  border-color: #D6D0C4 !important;
+}
+
+html.light .link-input-wrapper input {
+  color: #151412 !important;
+  background-color: transparent !important;
+}
+
+html.light .link-input-wrapper input::placeholder {
+  color: #7D7971 !important;
+}
+
+/* 7. Verified Protection Card in Light Mode */
+html.light [class*="from-[#171B26]"] {
+  background: linear-gradient(135deg, #EFF6FF 0%, #F5F9FF 50%, #EFF6FF 100%) !important;
+  border-color: #BFDBFE !important;
+}
+
+html.light [class*="from-[#171B26]"] h3 {
+  color: #1E3A8A !important;
+}
+
+html.light [class*="from-[#171B26]"] p {
+  color: #334155 !important;
+}
+
+/* 8. WHITE TEXT RESTORATION FOR SOLID COLORED BUTTONS (Defined last so it wins specificity) */
+html.light .bg-\[\#3B82F6\],
+html.light .bg-\[\#3B82F6\] *,
+html.light button.bg-\[\#3B82F6\],
+html.light button.bg-\[\#3B82F6\] *,
+html.light .bg-blue-600,
+html.light .bg-blue-600 *,
+html.light .bg-\[\#1877F2\],
+html.light .bg-\[\#1877F2\] *,
+html.light .bg-\[\#35A66A\],
+html.light .bg-\[\#35A66A\] *,
+html.light .bg-\[\#E05252\],
+html.light .bg-\[\#E05252\] * {
+  color: #FFFFFF !important;
+}
+
+/* 9. DARK TEXT RESTORATION FOR GOLD BUTTONS */
+html.light .from-\[\#F5C45E\],
+html.light .from-\[\#F5C45E\] *,
+html.light [class*="from-[#F5C45E]"],
+html.light [class*="from-[#F5C45E]"] *,
+html.light .bg-\[\#F5C45E\],
+html.light .bg-\[\#F5C45E\] * {
+  color: #0B0A09 !important;
+}
+
+/* Shadows & Glass in Light Mode */
+html.light [class*="shadow-"] {
+  box-shadow: 0 10px 30px rgba(22, 20, 18, 0.07) !important;
+}
+
+html.light .luxury-glass {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(180, 120, 10, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .luxury-card-elevated {
+  background: #FFFFFF !important;
+  border-color: #E2DDD3 !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06) !important;
+}
+

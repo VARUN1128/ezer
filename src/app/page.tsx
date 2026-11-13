@@ -187,22 +187,26 @@ export default function HomePage() {
       {/* ========================================================================= */}
       <div className="lg:hidden px-3.5 pt-3 pb-24 space-y-4 bg-[#0B0A09]">
         {/* Mobile Category Grid (2 Rows of 5 tiles matching reference screenshot with real photos) */}
-        <div className="space-y-2 pt-0.5">
+        <div className="space-y-3 pt-0.5">
           <div className="grid grid-cols-5 gap-2 text-center">
             {mobileCategoryTiles.slice(0, 5).map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex flex-col items-center justify-center p-1.5 rounded-2xl bg-[#141311] border border-[#25221B] hover:border-[#F5C45E]/40 active:scale-95 transition-all shadow-sm group"
+                className="flex flex-col items-center justify-start group active:scale-95 transition-transform"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#1C1A16] border border-[#2F2C24] overflow-hidden mb-1 shadow-sm">
-                  <img
-                    src={item.image}
-                    alt={item.label}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                {/* Category Photo Card */}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#141311] border border-[#26241F] group-hover:border-[#F5C45E]/50 overflow-hidden p-1 shadow-sm transition-all duration-300 flex items-center justify-center">
+                  <div className="w-full h-full rounded-xl overflow-hidden bg-[#1C1A16]">
+                    <img
+                      src={item.image}
+                      alt={item.label}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
-                <span className="text-[10px] font-medium text-white line-clamp-1 leading-tight group-hover:text-[#F5C45E] transition-colors">
+                {/* Category Name strictly BELOW the category photo */}
+                <span className="mt-1.5 text-[11px] font-medium text-white group-hover:text-[#F5C45E] line-clamp-1 leading-tight text-center transition-colors">
                   {item.label}
                 </span>
               </Link>
@@ -214,16 +218,20 @@ export default function HomePage() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex flex-col items-center justify-center p-1.5 rounded-2xl bg-[#141311] border border-[#25221B] hover:border-[#F5C45E]/40 active:scale-95 transition-all shadow-sm group"
+                className="flex flex-col items-center justify-start group active:scale-95 transition-transform"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#1C1A16] border border-[#2F2C24] overflow-hidden mb-1 shadow-sm">
-                  <img
-                    src={item.image}
-                    alt={item.label}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                {/* Category Photo Card */}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#141311] border border-[#26241F] group-hover:border-[#F5C45E]/50 overflow-hidden p-1 shadow-sm transition-all duration-300 flex items-center justify-center">
+                  <div className="w-full h-full rounded-xl overflow-hidden bg-[#1C1A16]">
+                    <img
+                      src={item.image}
+                      alt={item.label}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
-                <span className="text-[10px] font-medium text-white line-clamp-1 leading-tight group-hover:text-[#F5C45E] transition-colors">
+                {/* Category Name strictly BELOW the category photo */}
+                <span className="mt-1.5 text-[11px] font-medium text-white group-hover:text-[#F5C45E] line-clamp-1 leading-tight text-center transition-colors">
                   {item.label}
                 </span>
               </Link>
@@ -258,7 +266,7 @@ export default function HomePage() {
         </div>
 
         {/* 4. Quick URL Input Card for Direct Verification */}
-        <div className="rounded-2xl bg-[#141311] border border-[#26241F] p-3.5 space-y-2.5 shadow-md">
+        <div className="rounded-2xl bg-[#141311] border border-[#26241F] p-3.5 space-y-2.5 shadow-md link-input-card">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-white flex items-center gap-1.5">
               <LinkIcon className="w-3.5 h-3.5 text-[#F5C45E]" />
@@ -268,7 +276,7 @@ export default function HomePage() {
           </div>
 
           <form onSubmit={handleAnalyzeListing} className="space-y-2">
-            <div className="flex items-center bg-[#1A1815] border border-[#2F2C24] rounded-xl px-3 py-2 focus-within:border-[#F5C45E]/60 transition-colors">
+            <div className="flex items-center bg-[#1A1815] border border-[#2F2C24] rounded-xl px-3 py-2 focus-within:border-[#F5C45E]/60 transition-colors link-input-wrapper">
               <input
                 id="mobile-quick-url-input"
                 type="text"
@@ -277,7 +285,7 @@ export default function HomePage() {
                   setListingUrl(e.target.value);
                   if (feedback) setFeedback(null);
                 }}
-                placeholder="Paste OLX / Quikr / FB listing URL..."
+                placeholder="Paste listing URL here..."
                 className="w-full bg-transparent text-xs text-white placeholder-[#78756F] outline-none"
               />
             </div>
@@ -360,11 +368,6 @@ export default function HomePage() {
                       alt={prod.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-2 left-2">
-                      <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#0B0A09]/80 backdrop-blur-md text-[#F5C45E] border border-[#F5C45E]/30">
-                        {prod.marketplace}
-                      </span>
-                    </div>
                     <button
                       type="button"
                       aria-label="Save product"
@@ -431,7 +434,7 @@ export default function HomePage() {
                 {/* Luxury Headline */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08] font-sans">
                   Know Before <br />
-                  <span className="bg-gradient-to-r from-[#FFFFFF] via-[#FDE396] to-[#F5C45E] bg-clip-text text-transparent">
+                  <span className="gold-text-gradient">
                     You Buy.
                   </span>
                 </h1>
@@ -491,12 +494,12 @@ export default function HomePage() {
                 {/* LUXURY SUBMISSION CARD */}
                 <div
                   id="verify-form"
-                  className="bg-[#141311]/95 backdrop-blur-2xl border border-[#F5C45E]/30 rounded-3xl p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_30px_rgba(245,196,94,0.1)] space-y-4 max-w-xl transition-all"
+                  className="bg-[#141311]/95 backdrop-blur-2xl border border-[#F5C45E]/30 rounded-3xl p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_30px_rgba(245,196,94,0.1)] space-y-4 max-w-xl transition-all link-input-card"
                 >
                   {/* Input Pill & Button Row */}
                   <form
                     onSubmit={handleAnalyzeListing}
-                    className="bg-[#1C1A17] border border-[#332E25] focus-within:border-[#F5C45E]/70 focus-within:shadow-[0_0_20px_rgba(245,196,94,0.25)] rounded-2xl flex items-center p-1.5 transition-all"
+                    className="bg-[#1C1A17] border border-[#332E25] focus-within:border-[#F5C45E]/70 focus-within:shadow-[0_0_20px_rgba(245,196,94,0.25)] rounded-2xl flex items-center p-1.5 transition-all link-input-wrapper"
                   >
                     <div className="pl-3.5 text-[#8E8B85]">
                       <LinkIcon className="w-4 h-4 text-[#F5C45E]" />
@@ -508,7 +511,7 @@ export default function HomePage() {
                         setListingUrl(e.target.value);
                         if (feedback) setFeedback(null);
                       }}
-                      placeholder="Paste your OLX, Facebook Marketplace or Quikr listing URL"
+                      placeholder="Paste your listing URL to inspect..."
                       className="w-full bg-transparent text-white text-sm placeholder-[#75726B] outline-none px-3 py-2.5 font-normal"
                     />
                     <button
@@ -556,40 +559,68 @@ export default function HomePage() {
                     </div>
                   )}
 
-                  {/* Supported Platforms Row */}
-                  <div className="flex flex-wrap items-center gap-2.5 pt-1 text-xs">
-                    <span className="text-[#8E8B85] text-xs font-medium mr-0.5">
-                      Supported Platforms:
-                    </span>
+                  {/* Supported Platforms Row & 1-Click Sample Links */}
+                  <div className="space-y-2.5 pt-1">
+                    <div className="flex flex-wrap items-center gap-2.5 text-xs">
+                      <span className="text-[#8E8B85] text-xs font-medium mr-0.5">
+                        Supported Platforms:
+                      </span>
 
-                    {/* OLX Badge */}
-                    <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full bg-[#EDE7F6] text-[#5E35B1] font-black text-xs tracking-tight border border-purple-200">
-                      olx
-                    </span>
+                      {/* OLX Badge */}
+                      <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full bg-[#EDE7F6] text-[#5E35B1] font-black text-xs tracking-tight border border-purple-200">
+                        olx
+                      </span>
 
-                    {/* Facebook Badge */}
-                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#1877F2] text-white font-bold text-xs">
-                      f
-                    </span>
+                      {/* Facebook Badge */}
+                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#1877F2] text-white font-bold text-xs">
+                        f
+                      </span>
 
-                    {/* Quikr Badge */}
-                    <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-[#E0F2F1] text-[#00796B] font-bold text-xs border border-teal-200">
-                      Quikr
-                    </span>
+                      {/* Quikr Badge */}
+                      <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-[#E0F2F1] text-[#00796B] font-bold text-xs border border-teal-200">
+                        Quikr
+                      </span>
 
-                    {/* Truecaller Buy & Sell Badge */}
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#E3F2FD] text-[#0277BD] font-semibold text-xs border border-blue-200">
-                      <PhoneCall className="w-2.5 h-2.5" />
-                      <span>Truecaller Buy & Sell</span>
-                    </span>
+                      {/* Truecaller Buy & Sell Badge */}
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#E3F2FD] text-[#0277BD] font-semibold text-xs border border-blue-200">
+                        <PhoneCall className="w-2.5 h-2.5" />
+                        <span>Truecaller Buy & Sell</span>
+                      </span>
 
-                    <span className="text-[#4E4A42] text-xs mx-0.5">|</span>
+                      <span className="text-[#4E4A42] text-xs mx-0.5">|</span>
 
-                    {/* More dropdown */}
-                    <span className="inline-flex items-center gap-0.5 text-[#9E9B95] hover:text-white text-xs font-medium cursor-pointer transition-colors">
-                      <span>More</span>
-                      <ChevronDown className="w-3 h-3" />
-                    </span>
+                      {/* More dropdown */}
+                      <span className="inline-flex items-center gap-0.5 text-[#9E9B95] hover:text-white text-xs font-medium cursor-pointer transition-colors">
+                        <span>More</span>
+                        <ChevronDown className="w-3 h-3" />
+                      </span>
+                    </div>
+
+                    {/* 1-Click Quick Sample Testing Links */}
+                    <div className="flex items-center gap-2 pt-1 border-t border-[#23201B] text-[11px] text-[#8E8B85]">
+                      <span className="font-medium text-[#7D7971]">Quick test link:</span>
+                      <button
+                        type="button"
+                        onClick={() => setListingUrl('https://www.olx.in/item/iphone-14-128gb-midnight-urgent-sale-iid-18491029')}
+                        className="px-2.5 py-1 rounded-lg bg-[#1A1815] hover:bg-[#25221C] text-[#F5C45E] border border-[#332E25] hover:border-[#F5C45E]/50 transition-all text-[11px]"
+                      >
+                        iPhone 14 (OLX)
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setListingUrl('https://www.facebook.com/marketplace/item/928491048201')}
+                        className="px-2.5 py-1 rounded-lg bg-[#1A1815] hover:bg-[#25221C] text-[#F5C45E] border border-[#332E25] hover:border-[#F5C45E]/50 transition-all text-[11px]"
+                      >
+                        Samsung S23 (FB)
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setListingUrl('https://www.quikr.com/electronics/apple-macbook-air-m1-excellent-shape/p/38491039')}
+                        className="px-2.5 py-1 rounded-lg bg-[#1A1815] hover:bg-[#25221C] text-[#F5C45E] border border-[#332E25] hover:border-[#F5C45E]/50 transition-all text-[11px]"
+                      >
+                        MacBook Air M1
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -598,6 +629,46 @@ export default function HomePage() {
               <div className="lg:col-span-5 flex justify-center lg:justify-end">
                 <HeroVisual />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* DESKTOP VERIFIED PROTECTION GUARANTEE BANNER                              */}
+        {/* ========================================================================= */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-8 relative z-20">
+          <div className="rounded-3xl bg-gradient-to-r from-[#171B26] via-[#14161F] to-[#121316] border border-[#3B82F6]/35 p-6 sm:p-7 flex items-center justify-between gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.85)]">
+            <div className="flex items-center gap-5">
+              <div className="w-14 h-14 rounded-2xl bg-blue-500/15 border border-blue-500/35 flex items-center justify-center shrink-0 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                <ShieldCheck className="w-7 h-7 text-blue-400" />
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-wider border border-blue-500/30">
+                    Official Buyer Protection
+                  </span>
+                  <span className="text-xs text-[#8E8B85]">Coverage across 15 Indian metro regions</span>
+                </div>
+                <h3 className="text-lg font-bold text-white tracking-tight">
+                  You are eligible for Verified Pre-Owned Inspection Guarantee
+                </h3>
+                <p className="text-xs text-[#B8B5B0] max-w-2xl leading-relaxed">
+                  Avoid paying upfront for swapped OEM screens, fake invoices, and hidden chassis damages. An Ezer certified technician conducts an exhaustive 35-point on-site diagnostic before you commit.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={() => {
+                  const el = document.getElementById('verify-form');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-5 py-3 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold text-xs shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Inspect a Listing Now
+              </button>
             </div>
           </div>
         </section>
@@ -738,22 +809,28 @@ export default function HomePage() {
             </div>
 
             {/* Category Chips with Real Photos */}
-            <div className="grid grid-cols-4 lg:grid-cols-7 gap-3.5 mb-14">
+            <div className="grid grid-cols-4 lg:grid-cols-7 gap-4 mb-14">
               {CATEGORIES.map((cat) => (
                 <Link
                   key={cat.id}
                   href={`/marketplace?category=${encodeURIComponent(cat.name)}`}
-                  className="bg-[#141311] hover:bg-[#1B1915] border border-[#26241F] hover:border-[#F5C45E]/50 rounded-2xl p-3 flex flex-col items-center justify-center text-center group transition-all shadow-sm hover:shadow-[0_0_20px_rgba(245,196,94,0.15)]"
+                  className="flex flex-col items-center justify-start text-center group transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="mb-2.5 w-14 h-14 rounded-xl bg-[#1C1A16] border border-[#2B2822] overflow-hidden group-hover:border-[#F5C45E]/40 group-hover:scale-105 transition-all shadow-sm">
-                    <img
-                      src={cat.image}
-                      alt={cat.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
+                  <div className="w-20 h-20 rounded-3xl bg-[#141311] border border-[#26241F] group-hover:border-[#F5C45E]/50 p-1.5 overflow-hidden shadow-sm hover:shadow-[0_0_25px_rgba(245,196,94,0.18)] transition-all flex items-center justify-center">
+                    <div className="w-full h-full rounded-2xl overflow-hidden bg-[#1C1A16]">
+                      <img
+                        src={cat.image}
+                        alt={cat.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
                   </div>
-                  <span className="text-xs font-semibold text-white group-hover:text-[#F5C45E] transition-colors">
+                  {/* Category Name Below the Category Card */}
+                  <span className="mt-2 text-xs font-bold text-white group-hover:text-[#F5C45E] transition-colors block">
                     {cat.name}
+                  </span>
+                  <span className="text-[10px] text-[#35A66A] mt-0.5 font-semibold">
+                    Diagnostics Ready
                   </span>
                 </Link>
               ))}
@@ -764,7 +841,7 @@ export default function HomePage() {
               {MOCK_MARKETPLACE_PRODUCTS.slice(0, 4).map((product) => (
                 <div
                   key={product.id}
-                  className="bg-[#141311] border border-[#26241F] hover:border-[#F5C45E]/40 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-[0_15px_35px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_45px_rgba(245,196,94,0.12)]"
+                  className="bg-[#141311] border border-[#26241F] hover:border-[#F5C45E]/40 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-[0_15px_35px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_45px_rgba(245,196,94,0.12)] hover:-translate-y-1"
                 >
                   <div>
                     <div className="relative h-48 w-full bg-[#100F0D] overflow-hidden">
@@ -773,16 +850,13 @@ export default function HomePage() {
                         alt={product.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-[#0B0A09]/85 backdrop-blur-md text-[#F5C45E] border border-[#F5C45E]/30 shadow-md">
-                          {product.marketplace}
-                        </span>
-                      </div>
-                      <div className="absolute top-3 right-3">
-                        <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-neutral-900/90 text-neutral-300 border border-neutral-700">
-                          Demo
-                        </span>
-                      </div>
+                      <button
+                        type="button"
+                        aria-label="Save listing to wishlist"
+                        className="absolute top-3 right-3 p-2 rounded-full bg-[#0B0A09]/80 backdrop-blur-md text-white hover:text-red-400 hover:scale-110 transition-all border border-[#2B2822] shadow-sm"
+                      >
+                        <Heart className="w-4 h-4" />
+                      </button>
                     </div>
 
                     <div className="p-5 space-y-2.5">
@@ -793,9 +867,16 @@ export default function HomePage() {
                         </span>
                         <span>{product.posted_time}</span>
                       </div>
+
                       <h3 className="font-bold text-sm text-white line-clamp-2 leading-snug group-hover:text-[#F5C45E] transition-colors">
                         {product.title}
                       </h3>
+
+                      <div className="flex items-center gap-1.5 text-[11px] font-semibold text-[#4ADE80]">
+                        <span className="w-2 h-2 rounded-full bg-[#4ADE80] animate-pulse" />
+                        <span>Inspector Available in 2 hrs</span>
+                      </div>
+
                       <div className="flex items-baseline gap-2.5 pt-1">
                         <span className="text-xl font-extrabold text-[#F5C45E]">
                           ₹{product.price.toLocaleString('en-IN')}
@@ -812,12 +893,13 @@ export default function HomePage() {
                       type="button"
                       onClick={() => {
                         setListingUrl(product.url);
-                        window.scrollTo({ top: 120, behavior: 'smooth' });
+                        const el = document.getElementById('verify-form');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="w-full py-3 rounded-xl text-xs font-bold bg-[#1C1A17] hover:bg-[#F5C45E] text-[#F5C45E] hover:text-[#0B0A09] border border-[#353127] hover:border-[#F5C45E] transition-all flex items-center justify-center gap-2 shadow-sm"
+                      className="w-full py-3 rounded-2xl text-xs font-bold bg-gradient-to-r from-[#1C1A17] to-[#25221C] hover:from-[#F5C45E] hover:to-[#D99C32] text-[#F5C45E] hover:text-[#0B0A09] border border-[#3A352B] hover:border-[#F5C45E] transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow-[0_0_20px_rgba(245,196,94,0.3)]"
                     >
                       <ShieldCheck className="w-4 h-4" />
-                      <span>Verify This Item</span>
+                      <span>Request Physical Inspection</span>
                     </button>
                   </div>
                 </div>
