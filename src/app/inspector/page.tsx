@@ -227,8 +227,8 @@ function InspectorPortalContent() {
         {/* TAB 1: DASHBOARD OVERVIEW */}
         {activeTab === 'overview' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+            <div className="flex overflow-x-auto pb-3 pt-1 gap-4 snap-x snap-mandatory scrollbar-none sm:grid sm:grid-cols-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+              <div className="shrink-0 w-[180px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
                 <span className="text-xs font-semibold text-[#8E8B85] block">Available Requests</span>
                 <span className="text-2xl sm:text-3xl font-extrabold text-[#F5C45E] mt-1.5 block">
                   {availableJobs.length}
@@ -236,7 +236,7 @@ function InspectorPortalContent() {
                 <span className="text-xs text-[#8E8B85] mt-1 block">In your coverage area</span>
               </div>
 
-              <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+              <div className="shrink-0 w-[180px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
                 <span className="text-xs font-semibold text-[#8E8B85] block">Accepted / Active</span>
                 <span className="text-2xl sm:text-3xl font-extrabold text-blue-400 mt-1.5 block">
                   {myAcceptedJobs.length}
@@ -244,7 +244,7 @@ function InspectorPortalContent() {
                 <span className="text-xs text-[#8E8B85] mt-1 block">Awaiting report filing</span>
               </div>
 
-              <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+              <div className="shrink-0 w-[180px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
                 <span className="text-xs font-semibold text-[#8E8B85] block">Completed Jobs</span>
                 <span className="text-2xl sm:text-3xl font-extrabold text-[#35A66A] mt-1.5 block">
                   {myCompletedJobs.length + DEMO_PARTNER_PROFILE.total_inspections}
@@ -252,7 +252,7 @@ function InspectorPortalContent() {
                 <span className="text-xs text-[#8E8B85] mt-1 block">100% verified verdict</span>
               </div>
 
-              <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+              <div className="shrink-0 w-[180px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
                 <span className="text-xs font-semibold text-[#8E8B85] block">Total Earnings</span>
                 <span className="text-2xl sm:text-3xl font-extrabold text-white mt-1.5 block">
                   ₹{totalEarnings.toLocaleString('en-IN')}
@@ -318,11 +318,11 @@ function InspectorPortalContent() {
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="flex overflow-x-auto pb-4 gap-4 snap-x snap-mandatory scrollbar-none md:grid md:grid-cols-2 -mx-4 px-4 sm:mx-0 sm:px-0">
                 {availableJobs.map((job) => (
                   <div
                     key={job.id}
-                    className="bg-[#181715] border border-[#2A2824] hover:border-[#F5C45E]/40 rounded-2xl p-5 sm:p-6 transition-all flex flex-col justify-between group shadow-card"
+                    className="shrink-0 w-[300px] md:w-auto snap-center bg-[#181715] border border-[#2A2824] hover:border-[#F5C45E]/40 rounded-2xl p-5 sm:p-6 transition-all flex flex-col justify-between group shadow-card"
                   >
                     <div className="space-y-3">
                       {/* Top tags */}
@@ -428,11 +428,11 @@ function InspectorPortalContent() {
                 </button>
               </div>
             ) : (
-              <div className="space-y-4">
+              <div className="flex overflow-x-auto pb-4 gap-4 snap-x snap-mandatory scrollbar-none md:grid md:grid-cols-2 -mx-4 px-4 sm:mx-0 sm:px-0">
                 {myAcceptedJobs.map((job) => (
                   <div
                     key={job.id}
-                    className="bg-[#181715] border border-[#2A2824] rounded-2xl p-5 sm:p-6 shadow-card"
+                    className="shrink-0 w-[310px] md:w-auto snap-center bg-[#181715] border border-[#2A2824] rounded-2xl p-5 sm:p-6 shadow-card flex flex-col justify-between"
                   >
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                       <div className="space-y-2 flex-1">
@@ -537,8 +537,8 @@ function InspectorPortalContent() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-[#181715] border border-[#2A2824] rounded-2xl p-5">
+            <div className="flex overflow-x-auto pb-3 gap-4 snap-x snap-mandatory scrollbar-none sm:grid sm:grid-cols-3 -mx-4 px-4 sm:mx-0 sm:px-0">
+              <div className="shrink-0 w-[240px] sm:w-auto snap-center bg-[#181715] border border-[#2A2824] rounded-2xl p-5">
                 <span className="text-xs text-[#8E8B85] block">Lifetime Earned</span>
                 <span className="text-3xl font-extrabold text-[#4ADE80] mt-1 block">
                   ₹{totalEarnings.toLocaleString('en-IN')}
@@ -546,7 +546,7 @@ function InspectorPortalContent() {
                 <span className="text-[11px] text-[#8E8B85] mt-1 block">Across all completed jobs</span>
               </div>
 
-              <div className="bg-[#181715] border border-[#2A2824] rounded-2xl p-5">
+              <div className="shrink-0 w-[240px] sm:w-auto snap-center bg-[#181715] border border-[#2A2824] rounded-2xl p-5">
                 <span className="text-xs text-[#8E8B85] block">Pending Clearance</span>
                 <span className="text-3xl font-extrabold text-[#F5C45E] mt-1 block">
                   ₹{myAcceptedJobs.reduce((acc, curr) => acc + curr.inspection_fee, 0)}
@@ -554,7 +554,7 @@ function InspectorPortalContent() {
                 <span className="text-[11px] text-[#8E8B85] mt-1 block">Releases upon report filing</span>
               </div>
 
-              <div className="bg-[#181715] border border-[#2A2824] rounded-2xl p-5">
+              <div className="shrink-0 w-[240px] sm:w-auto snap-center bg-[#181715] border border-[#2A2824] rounded-2xl p-5">
                 <span className="text-xs text-[#8E8B85] block">Registered UPI</span>
                 <span className="text-sm font-mono font-bold text-white mt-2 block">
                   vikram.m@oksbi

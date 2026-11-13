@@ -199,11 +199,11 @@ function MarketplaceContent() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="flex overflow-x-auto pb-4 gap-4 snap-x snap-mandatory scrollbar-none sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-6 sm:overflow-visible sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-[#141311] border border-[#26241F] hover:border-[#F5C45E]/40 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-[0_15px_35px_rgba(0,0,0,0.85)] hover:shadow-[0_20px_45px_rgba(245,196,94,0.15)]"
+                className="shrink-0 w-[285px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] hover:border-[#F5C45E]/40 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-[0_15px_35px_rgba(0,0,0,0.85)] hover:shadow-[0_20px_45px_rgba(245,196,94,0.15)]"
               >
                 <div>
                   {/* Image container */}

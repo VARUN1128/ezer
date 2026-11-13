@@ -139,27 +139,27 @@ export default function CustomerDashboardPage() {
           </div>
         </div>
 
-        {/* Stats Row - Luxury Obsidian Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+        {/* Stats Row - Luxury Obsidian Cards (Horizontal scroll on mobile) */}
+        <div className="flex overflow-x-auto pb-3 pt-1 gap-4 snap-x snap-mandatory scrollbar-none sm:grid sm:grid-cols-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="shrink-0 w-[180px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
             <span className="text-xs font-semibold text-[#8E8B85] block">Total Requests</span>
             <span className="text-2xl sm:text-3xl font-extrabold text-white mt-1.5 block">{counts.all}</span>
             <span className="text-xs text-[#F5C45E] mt-1 block">Tracked listings</span>
           </div>
 
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+          <div className="shrink-0 w-[180px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
             <span className="text-xs font-semibold text-[#8E8B85] block">Pending Partners</span>
             <span className="text-2xl sm:text-3xl font-extrabold text-amber-400 mt-1.5 block">{counts.pending}</span>
             <span className="text-xs text-[#8E8B85] mt-1 block">Awaiting partner accept</span>
           </div>
 
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+          <div className="shrink-0 w-[180px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
             <span className="text-xs font-semibold text-[#8E8B85] block">Partner Assigned</span>
             <span className="text-2xl sm:text-3xl font-extrabold text-blue-400 mt-1.5 block">{counts.assigned}</span>
             <span className="text-xs text-[#8E8B85] mt-1 block">Partner en route/scheduled</span>
           </div>
 
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+          <div className="shrink-0 w-[180px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-5 sm:p-6 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
             <span className="text-xs font-semibold text-[#8E8B85] block">Reports Ready</span>
             <span className="text-2xl sm:text-3xl font-extrabold text-[#4ADE80] mt-1.5 block">{counts.reports}</span>
             <span className="text-xs text-[#8E8B85] mt-1 block">Verification complete</span>

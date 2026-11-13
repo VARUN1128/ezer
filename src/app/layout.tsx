@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="bg-[#101010] text-white min-h-screen flex flex-col selection:bg-[#F5C45E] selection:text-[#101010]">
         <Navbar />
-        <main className="flex-1 pb-16 sm:pb-0">{children}</main>
+        <main className="flex-1 pb-20 lg:pb-0">{children}</main>
         <Footer />
         <MobileBottomNav />
       </body>

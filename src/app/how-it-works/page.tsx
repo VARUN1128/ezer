@@ -37,9 +37,9 @@ export default function HowItWorksPage() {
           </p>
         </div>
 
-        {/* 3 Step Deep Dive */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-8 space-y-4 relative shadow-[0_20px_45px_rgba(0,0,0,0.85)]">
+        {/* 3 Step Deep Dive (Horizontal scroll on mobile) */}
+        <div className="flex overflow-x-auto pb-4 gap-4 snap-x snap-mandatory scrollbar-none md:grid md:grid-cols-3 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="shrink-0 w-[280px] md:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-7 sm:p-8 space-y-4 relative shadow-[0_20px_45px_rgba(0,0,0,0.85)]">
             <div className="w-11 h-11 rounded-2xl bg-[#1C1A16] text-[#F5C45E] font-mono font-bold text-lg flex items-center justify-center border border-[#F5C45E]/30 shadow-[0_0_15px_rgba(245,196,94,0.15)]">
               01
             </div>
@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-8 space-y-4 relative shadow-[0_20px_45px_rgba(0,0,0,0.85)]">
+          <div className="shrink-0 w-[280px] md:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-7 sm:p-8 space-y-4 relative shadow-[0_20px_45px_rgba(0,0,0,0.85)]">
             <div className="w-11 h-11 rounded-2xl bg-[#1C1A16] text-[#F5C45E] font-mono font-bold text-lg flex items-center justify-center border border-[#F5C45E]/30 shadow-[0_0_15px_rgba(245,196,94,0.15)]">
               02
             </div>
@@ -59,7 +59,7 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-8 space-y-4 relative shadow-[0_20px_45px_rgba(0,0,0,0.85)]">
+          <div className="shrink-0 w-[280px] md:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-7 sm:p-8 space-y-4 relative shadow-[0_20px_45px_rgba(0,0,0,0.85)]">
             <div className="w-11 h-11 rounded-2xl bg-[#1C1A16] text-[#F5C45E] font-mono font-bold text-lg flex items-center justify-center border border-[#F5C45E]/30 shadow-[0_0_15px_rgba(245,196,94,0.15)]">
               03
             </div>
@@ -70,15 +70,15 @@ export default function HowItWorksPage() {
           </div>
         </div>
 
-        {/* Detailed Inspection Checklist by Category */}
+        {/* Detailed Inspection Checklist by Category (Horizontal scroll on mobile) */}
         <div id="inspection-protocol" className="space-y-6">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-white">Category Inspection Protocols</h2>
             <p className="text-xs text-[#8E8B85] mt-1">What our inspectors check during every visit</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#181715] border border-[#2A2824] rounded-2xl p-6 space-y-3">
+          <div className="flex overflow-x-auto pb-4 gap-4 snap-x snap-mandatory scrollbar-none md:grid md:grid-cols-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="shrink-0 w-[300px] md:w-auto snap-center bg-[#181715] border border-[#2A2824] rounded-2xl p-6 space-y-3">
               <div className="flex items-center gap-2 text-white font-bold text-sm">
                 <Smartphone className="w-5 h-5 text-[#F5C45E]" />
                 <span>Mobiles & Tablets Checklist</span>
@@ -103,7 +103,7 @@ export default function HowItWorksPage() {
               </ul>
             </div>
 
-            <div className="bg-[#181715] border border-[#2A2824] rounded-2xl p-6 space-y-3">
+            <div className="shrink-0 w-[300px] md:w-auto snap-center bg-[#181715] border border-[#2A2824] rounded-2xl p-6 space-y-3">
               <div className="flex items-center gap-2 text-white font-bold text-sm">
                 <Laptop className="w-5 h-5 text-[#F5C45E]" />
                 <span>Laptops & MacBooks Checklist</span>
@@ -128,7 +128,7 @@ export default function HowItWorksPage() {
               </ul>
             </div>
 
-            <div className="bg-[#181715] border border-[#2A2824] rounded-2xl p-6 space-y-3">
+            <div className="shrink-0 w-[300px] md:w-auto snap-center bg-[#181715] border border-[#2A2824] rounded-2xl p-6 space-y-3">
               <div className="flex items-center gap-2 text-white font-bold text-sm">
                 <Bike className="w-5 h-5 text-[#F5C45E]" />
                 <span>Bikes & Two-Wheelers Checklist</span>
@@ -153,7 +153,7 @@ export default function HowItWorksPage() {
               </ul>
             </div>
 
-            <div className="bg-[#181715] border border-[#2A2824] rounded-2xl p-6 space-y-3">
+            <div className="shrink-0 w-[300px] md:w-auto snap-center bg-[#181715] border border-[#2A2824] rounded-2xl p-6 space-y-3">
               <div className="flex items-center gap-2 text-white font-bold text-sm">
                 <Car className="w-5 h-5 text-[#F5C45E]" />
                 <span>Cars Checklist</span>

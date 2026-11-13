@@ -1,13 +1,48 @@
 import { MockProductListing } from './types';
 
 export const CATEGORIES = [
-  { id: 'Mobiles', name: 'Mobiles', icon: 'Smartphone' },
-  { id: 'Laptops', name: 'Laptops', icon: 'Laptop' },
-  { id: 'Cars', name: 'Cars', icon: 'Car' },
-  { id: 'Bikes', name: 'Bikes', icon: 'Bike' },
-  { id: 'Electronics', name: 'Electronics', icon: 'Tv' },
-  { id: 'Home Appliances', name: 'Home Appliances', icon: 'Refrigerator' },
-  { id: 'Furniture', name: 'Furniture', icon: 'Armchair' },
+  {
+    id: 'Mobiles',
+    name: 'Mobiles',
+    icon: 'Smartphone',
+    image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'Laptops',
+    name: 'Laptops',
+    icon: 'Laptop',
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'Cars',
+    name: 'Cars',
+    icon: 'Car',
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'Bikes',
+    name: 'Bikes',
+    icon: 'Bike',
+    image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'Electronics',
+    name: 'Electronics',
+    icon: 'Tv',
+    image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'Home Appliances',
+    name: 'Home Appliances',
+    icon: 'Refrigerator',
+    image: 'https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=400&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'Furniture',
+    name: 'Furniture',
+    icon: 'Armchair',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&auto=format&fit=crop&q=80',
+  },
 ] as const;
 
 export const INDIAN_DISTRICTS = [

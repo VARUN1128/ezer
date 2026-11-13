@@ -133,9 +133,9 @@ export default function JoinPartnerPage() {
           </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-6 text-center space-y-2.5 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+        {/* Benefits Grid (Horizontal scroll on mobile) */}
+        <div className="flex overflow-x-auto pb-4 gap-4 snap-x snap-mandatory scrollbar-none sm:grid sm:grid-cols-3 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="shrink-0 w-[270px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-6 text-center space-y-2.5 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
             <div className="w-12 h-12 rounded-2xl bg-[#1C1A16] border border-[#F5C45E]/30 text-[#F5C45E] flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(245,196,94,0.15)]">
               <IndianRupee className="w-5 h-5" />
             </div>
@@ -145,7 +145,7 @@ export default function JoinPartnerPage() {
             </p>
           </div>
 
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-6 text-center space-y-2.5 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+          <div className="shrink-0 w-[270px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-6 text-center space-y-2.5 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
             <div className="w-12 h-12 rounded-2xl bg-[#1C1A16] border border-[#F5C45E]/30 text-[#F5C45E] flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(245,196,94,0.15)]">
               <Clock className="w-5 h-5" />
             </div>
@@ -155,7 +155,7 @@ export default function JoinPartnerPage() {
             </p>
           </div>
 
-          <div className="bg-[#141311] border border-[#26241F] rounded-3xl p-6 text-center space-y-2.5 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
+          <div className="shrink-0 w-[270px] sm:w-auto snap-center bg-[#141311] border border-[#26241F] rounded-3xl p-6 text-center space-y-2.5 shadow-[0_15px_35px_rgba(0,0,0,0.8)]">
             <div className="w-12 h-12 rounded-2xl bg-[#1C1A16] border border-[#F5C45E]/30 text-[#F5C45E] flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(245,196,94,0.15)]">
               <ShieldCheck className="w-5 h-5" />
             </div>
